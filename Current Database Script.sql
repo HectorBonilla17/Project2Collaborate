@@ -13,20 +13,30 @@ USE P2C;
 
 /*
 DROP TABLE TeamMembers;
-DROP TABLE Assignments;
 DROP TABLE Grades;
 DROP TABLE Submissions;
+DROP TABLE Assignments;
 DROP TABLE Goals;
-DROP TABLE Courses;
 DROP TABLE Teams;
-DROP TABLE Students;
+DROP TABLE Courses;
 DROP TABLE Faculty;
+DROP TABLE Students;
 DROP TABLE Users;
 */
 
 
 
 
+
+/*
+USERS TABLE:
+- UserType = 'Student' or 'Faculty'.
+*/
+CREATE TABLE Users (
+UserID INT,
+UserType VARCHAR(8),
+CONSTRAINT PK_Users PRIMARY KEY (UserID)
+);
 
 /*
 STUDENTS TABLE:
@@ -64,29 +74,6 @@ CONSTRAINT FK_Users_Faculty FOREIGN KEY (FacultyID) REFERENCES Users(UserID)
 );
 
 /*
-USERS TABLE:
-- UserType = 'Student' or 'Faculty'.
-*/
-CREATE TABLE Users (
-UserID INT,
-UserType VARCHAR(8),
-CONSTRAINT PK_Users PRIMARY KEY (UserID)
-);
-
-/*
-TEAMS TABLE
-- Values in the TeamCreatedBy column will be taken from the CourseCreatedBy column in the Courses table.
-*/
-CREATE TABLE Teams (
-TeamID INT,
-TeamName VARCHAR(64) NOT NULL,
-CourseID INT,
-TeamCreatedBy INT,
-CONSTRAINT PK_Teams PRIMARY KEY (TeamID),
-CONSTRAINT FK_Courses_Teams FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
-);
-
-/*
 COURSES TABLE:
 - CourseCode example: 'CSC 394'.
 - CourseYear examples: '2020 - 2021' or '2021'.
@@ -102,6 +89,19 @@ CourseQuarter VARCHAR(32) NOT NULL,
 CourseCreatedBy INT,
 CONSTRAINT PK_Courses PRIMARY KEY (CourseID),
 CONSTRAINT FK_Faculty_Courses FOREIGN KEY (CourseCreatedBy) REFERENCES Faculty(FacultyID)
+);
+
+/*
+TEAMS TABLE
+- Values in the TeamCreatedBy column will be taken from the CourseCreatedBy column in the Courses table.
+*/
+CREATE TABLE Teams (
+TeamID INT,
+TeamName VARCHAR(64) NOT NULL,
+CourseID INT,
+TeamCreatedBy INT,
+CONSTRAINT PK_Teams PRIMARY KEY (TeamID),
+CONSTRAINT FK_Courses_Teams FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
 );
 
 /*
@@ -125,6 +125,22 @@ GoalStage INT NOT NULL,
 TeamID INT,
 CONSTRAINT PK_Goals PRIMARY KEY (GoalID),
 CONSTRAINT FK_Teams_Goals FOREIGN KEY (TeamID) REFERENCES Teams(TeamID)
+);
+
+/*
+ASSIGNMENTS TABLE
+*/
+CREATE TABLE Assignments (
+AssignmentID INT,
+AssignmentName VARCHAR(200) NOT NULL,
+StartDate DATE,
+StartTime TIME,
+DueDate DATE,
+DueTime TIME,
+CourseID INT,
+AssignmentCreatedBy INT,
+CONSTRAINT PK_Assignments PRIMARY KEY (AssignmentID),
+CONSTRAINT FK_Courses_Assignments FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
 );
 
 /*
@@ -161,22 +177,6 @@ StudentID INT,
 CONSTRAINT PK_Grades PRIMARY KEY (GradeID),
 CONSTRAINT FK_Assignments_Grades FOREIGN KEY (AssignmentID) REFERENCES Assignments(AssignmentID),
 CONSTRAINT FK_Students_Grades FOREIGN KEY (StudentID) REFERENCES Students(StudentID)
-);
-
-/*
-ASSIGNMENTS TABLE
-*/
-CREATE TABLE Assignments (
-AssignmentID INT,
-AssignmentName VARCHAR(200) NOT NULL,
-StartDate DATE,
-StartTime TIME,
-DueDate DATE,
-DueTime TIME,
-CourseID INT,
-AssignmentCreatedBy INT,
-CONSTRAINT PK_Assignments PRIMARY KEY (AssignmentID),
-CONSTRAINT FK_Courses_Assignments FOREIGN KEY (CourseID) REFERENCES Courses(CourseID)
 );
 
 /*
