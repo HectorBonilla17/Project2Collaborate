@@ -41,7 +41,7 @@ def team_delete(teamName, courseID, teamBy):
         print()
         print("Start team_delete():")
 
-        cursor.execute('DELETE FROM Teams WHERE TeamName = {0}, CourseID = {1}, TeamCreatedBy = {2}'.format(teamName, courseID, teamBy)      
+        cursor.execute('DELETE FROM Teams WHERE TeamName = {0} AND CourseID = {1} AND TeamCreatedBy = {2}'.format(teamName, courseID, teamBy)      
         output = cursor.fetchall()
         if output:
             print("team_delete was successful.")
