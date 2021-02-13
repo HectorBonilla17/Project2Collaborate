@@ -8,16 +8,15 @@ def createCourse(CourseName, CourseCode, CourseSectionNumber, CourseYear, Course
         print("Start createCourse():")
         cursor.execute('SELECT FacultyID FROM Faculty')
         faulty_ids = cursor.fetchall()
-        for id in faulty_ids:
-            if (CourseCreatedBy == id):
-                cursor.execute('INSERT INTO Courses (CourseName, CourseCode, SourseSectionNumber, CourseYear, CourseQuater, CourseCreatedBy) VALUES ({0}, {1}, {2}, {3}, {4}, {5})').format(CourseName, CourseCode, CourseSectionNumber, CourseYear, CourseQuarter, CourseCreatedBy)
-                output = cursor.fetchall()
-                if output:
-                    print("createCourse() was successful.")
-                else:
-                    print("createCourse() failed.")
+        if CourseCreatedBy in faulty_ids:
+            cursor.execute('INSERT INTO Courses (CourseName, CourseCode, SourseSectionNumber, CourseYear, CourseQuater, CourseCreatedBy) VALUES ({0}, {1}, {2}, {3}, {4}, {5})').format(CourseName, CourseCode, CourseSectionNumber, CourseYear, CourseQuarter, CourseCreatedBy)
+            output = cursor.fetchall()
+            if output:
+                print("createCourse() was successful.")
             else:
-                print("FacultyID doesn't exist.")
+                print("createCourse() failed.")
+        else:
+            print("FacultyID doesn't exist.")
     except:
         print("An error occurred in createCourse().")
     finally:
@@ -53,7 +52,7 @@ def deleteCourse(CourseName, CourseCode, CourseSectionNumber, CourseYesr, Course
         cursor.execute('DELETE FROM Courses WHERE CourseName = {0} AND CourseCose = {1} AND CourseSectionNumber = {2} AND CourseYear = {3} AND CourseQuarter = {4} AND CourseCreatedBy = {5}').format(CourseName, CourseCode, CourseSectionNumber, CourseYesr, CourseQuarter, CourseCreatedBy)
         output = cursor.fetchall()
         if output:
-            print("deleteCourse() was successfull.")
+            print("deleteCourse() was successful.")
         else:
             print("deleteCourse() failed.")
     except:
