@@ -24,11 +24,11 @@ def submission_get(SubmissionDate = "", SubmissionTime = "", AssignmentID = "", 
         args = locals()
         optionalSelect = ""
         for i in args:
-            if(len(args[i]) != 0 and len(testArray) == 0):
-                optionalSelect = "WHERE " + i + " = " + args[i]
+            if(len(args[i]) != 0 and len(optionalSelect) == 0):
+                optionalSelect = ("WHERE {} = '{}'".format(i, args[i]))
         
-            elif(len(args[i]) != 0 and len(testArray) != 0):
-                optionalSelect += ' AND ' + i + " = " + args[i]
+            elif(len(args[i]) != 0 and len(optionalSelect) != 0):
+                optionalSelect += (" AND {} = '{}'".format(i, args[i]))
 
 
         cursor.execute('SELECT * FROM Submissions {0}'.format(optionalSelect))
