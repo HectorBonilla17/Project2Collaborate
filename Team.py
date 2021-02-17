@@ -1,9 +1,9 @@
-def team_create(teamName, choosenCourse):
+def team_create(teamName, courseID): #DONE
     try:
         print()
         print("Start team_create():")
-
-        courseID, teamBy = course_get(choosenCourse)
+        cursor.execute('SELECT CourseCreatedBy FROM Courses WHERE CourseCode = {0}'.format(courseID))
+        teamBy = cursor.fetchall()
         
         cursor.execute('INSERT INTO Teams (TeamName, CourseID, TeamCreatedBy) VALUES ({0}, {1}, {2})'.format(teamName, courseID, teamBy)
         output = cursor.fetchall()
@@ -18,7 +18,7 @@ def team_create(teamName, choosenCourse):
 
 #----------------------------------------------------------
  
-def team_update(teamName, courseID, teamBy):
+def team_update(teamName, courseID, teamBy): #DONE
     try:
         print()
         print("Start team_update():")
@@ -36,7 +36,7 @@ def team_update(teamName, courseID, teamBy):
 
 #----------------------------------------------------------
 
-def team_delete(teamName, courseID, teamBy):
+def team_delete(teamName, courseID, teamBy): #DONE
     try:
         print()
         print("Start team_delete():")
@@ -54,7 +54,7 @@ def team_delete(teamName, courseID, teamBy):
         
 #----------------------------------------------------------
         
-def team_get():
+def team_get(): #DONE
     try:
         print()
         print("Start team_get():")
