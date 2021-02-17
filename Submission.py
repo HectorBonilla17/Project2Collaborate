@@ -16,22 +16,11 @@ def submission_create(assignID, subComment = "", subByStudent = "", subByFaculty
         
 #----------------------------------------------------------
         
-def submission_get(SubmissionDate = "", SubmissionTime = "", AssignmentID = "", SubmittedByStudent = "", SubmittedByFaculty = ""):
+def submission_get():
     try:
         print()
         print("Start submission_get():")
-
-        args = locals()
-        optionalSelect = ""
-        for i in args:
-            if(len(args[i]) != 0 and len(optionalSelect) == 0):
-                optionalSelect = ("WHERE {} = '{}'".format(i, args[i]))
-        
-            elif(len(args[i]) != 0 and len(optionalSelect) != 0):
-                optionalSelect += (" AND {} = '{}'".format(i, args[i]))
-
-
-        cursor.execute('SELECT * FROM Submissions {0}'.format(optionalSelect))
+        cursor.execute('SELECT * FROM Submissions')
         output = cursor.fetchall()
         if output:
             print("submission_get was successful.")
