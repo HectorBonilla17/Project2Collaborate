@@ -9,6 +9,7 @@ header {
 
 #container{
     width: 90%;
+    text-align: center;
     margin:auto;
     padding:10px;
 }
