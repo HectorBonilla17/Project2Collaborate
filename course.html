@@ -25,14 +25,65 @@ making the remaining pages here.
 </header>
 
 <div class="wrapper">
-  <div class="box header">Header</div>
-  <div class="box nav">Navigation</div>
-  <div class="box menu">Menu</div>  
-  <div class="box progbar">ProgressBar</div>
-  <div class="box main">Main</div>
-  <div class="box right">Right 1</div>
-  <div class="box right2">Right 2</div>
-  <div class="box footer">Footer</div>
+  <div class="box header">
+    <h1>Header</h1>
+    <a> Logo on the left with routing back to class selection. Dropdown on the right with User settings. </a>
+    <!--  <a class="nav-image" href="selection_student.html"><img src="" width="160"
+      height="80"> </a>-->
+  </div>
+
+  <!-- logo should return back to course selection-->
+  <!--<div class="box nav">Navigation</div> commented out for now
+   navigates across majority of course "main pages"-->
+  <div class="box menu">
+    <!-- Menu -->
+    <nav class="gridmenu">
+      <ul class = "mainbar">
+        <li class = "mainpage"> <a href ="">Course Page</a></li>
+          <ul>
+            <li class = "subpage"><a href = "content/html"> Content/News </a></li>
+            <li class = "subpagee"><a href = "assignments.html"> Assignments </a></li>
+            <li class = "subpage"><a href = "grades.html"> Submissions </a></li>
+          </ul>
+        <li class = "mainpage"> <a href ="">Project Page</a></li> 
+        <!-- will hold the progress bar and each box will link to that phase -->
+          <ul>
+            <li class = "subpage"><a href = "storage.html"> Team Storage </a></li>
+            <li class = "subpage"><a href = "team.html"> Team Details </a></li>
+          </ul>
+      </ul>
+    </nav>
+  </div>  
+  <!-- holds link to project page, content, grades, assignments, etc..-->
+  
+  <div class="box progbar">
+    <h1>Progress Bar</h1>
+  </div>
+  <!-- multi-colored progress bar-->
+  <div class="box main">
+    <h1>Main</h1>
+    <a> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</a>
+  </div>
+  <!-- main course contents and list in project-->
+  <div class="box right">
+    <h1>Right 1</h1>
+    <a>
+      News feed?
+    </a>
+  </div>
+  <!-- will hold communication aspect for project page, or news in content-->
+  <div class="box right2">
+    <h1>Right 2</h1>
+    <a>
+      Communication method?
+    </a>
+  </div>
+  <!-- future use case?-->
+  <div class="box footer">
+    <h1>Footer</h1>
+    <a> terms of service & etc..</a>
+  </div>
+  <!-- link to terms of service, contact, etc..-->
 </div>
 
   <body>

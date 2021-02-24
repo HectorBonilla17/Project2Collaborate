@@ -18,10 +18,15 @@ header {
     padding:10px;
 }
 
-.box{
+/*
+GRID PROPERTIES
+*/
+
+.item{
     background-color: #444;
     color: #fff;
     border-radius: 5px;
+    
     padding: 20px;
     font-size: 150%;
 }
@@ -29,16 +34,18 @@ header {
   .header{
     text-align: center;
     grid-area: header;
-    background-color:#000;
+    background-color:#333;
   }
   
-  .nav{
+  /*.nav{
     text-align: center;
     grid-area: nav;
-  }
+    background-color:#444;
+  }*/
   .menu{
-    text-align: center;
+    text-align: left;
     grid-area: menu;
+    background-color:#333;
   }
   .progbar{
     text-align: center;
@@ -47,28 +54,29 @@ header {
   }
   .main{
     text-align: center;
-    grid-area: main;
+    background-color:#444;
   }
   .right{
     text-align: center;
-    grid-area: right1;
+    background-color:#333;
   }
   .right2{
     text-align: center;
     grid-area: right2;
+    background-color:#444;
   }
   .footer{
     text-align: center;
     grid-area: footer;
+    background-color:#333;
   }
 
   .wrapper {
       display: grid;
       grid-template-columns: 17.5% 52.5% 30%;
-      grid-template-rows: 140px 80px 100px 300px 300px 110px;
+      grid-template-rows: 140px 80px 300px 300px 65px;
       grid-template-areas:
         "header header header"
-        "nav nav nav"
         "menu progbar progbar"
         "menu main right1"
         "menu main right2"
@@ -78,4 +86,52 @@ header {
 
   .grid-container > div {
       text-align: center;
+  }
+
+  /* 
+  ----- Menu CSS -----
+  */
+  .gridmenu {
+    height: 480px;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow: hidden;
+  }
+  
+  .gridmenu a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+    display: block;
+  }
+
+  .mainpage a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 30px;
+    color: blanchedalmond;
+    display: block;
+  }
+  
+  .gridmenu a:hover {
+    color: lightblue;
+  }
+  
+  .main { /* will primarily hold a list full of links to pages with content. */
+    margin-left: 0%; 
+    font-size: 20px; 
+  }
+
+  /* 
+  MEDIA QUERIES
+  https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+  */
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
   }
