@@ -1,17 +1,17 @@
 <!doctype html>
 <!--=====================================================================
-For the grades page we need a dynamic JS table for both the professor and 
-student. We can also include a text box for the professor to comment.
+For the teams page we need a dynamic JS table for all of the team members
+to be displayed alongside:
 
-GradeID
-PointsEarned 
-TotalPoints 
-GradePercentage X
-LetterGrade X
-FacultyFeedback X
-DatePosted X
-AssignmentID
-StudentID
+Team_members
+  Team ID X
+  Student ID X
+
+Teams
+  TeamID
+  TeamName X
+  CourseID
+  TeamCreatedBy X
 =====================================================================-->
 <html lang="en">
 <head>
@@ -27,12 +27,71 @@ StudentID
 </head>
 
 <header>
-    <h1> Team Details </h1>
+    <h1> Team Name (insert team name) </h1>
+    <h1> Course Name (insert course ID) </h1>
 </header>
 
 <div class='detailswrapper' style="display:block;">
-
+  <table class ="teamtable">
+    <thead class ="teamtablehead">
+      <tr class="teamheaderrow">
+        <th>Team ID</th>
+        <th>Student Name (first, last) </th>
+        <th>Student Email</th>
+        <th>Team Created By</th>
+      </tr>
+    </thead>
+    <tbody class = "teamtablebody">
+      <tr>
+        <td>3</td>
+        <td>Tom Zdanowski</td>
+        <td>TomZ@depaul.edu</td>
+        <td>Thomas Muscarello</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Yousuf Kazmi</td>
+        <td>YsufK@depaul.edu</td>
+        <td>Thomas Muscarello</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Zining Wang</td>
+        <td>ZWang@depaul.edu</td>
+        <td>Thomas Muscarello</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Krishan Patel</td>
+        <td>kpat@depaul.edu</td>
+        <td>Thomas Muscarello</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Mohamed Elkarem</td>
+        <td>MoeE@depaul.edu</td>
+        <td>Thomas Muscarello</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Ahad Ansari</td>
+        <td>AhadA@depaul.edu</td>
+        <td>Thomas Muscarello</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Hector Bonilla</td>
+        <td>HecB@depaul.edu</td>
+        <td>Thomas Muscarello</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
+
+  <body>
+      <script src="javascript/scripts.js"></script>
+  </body>
+</html>
 
   <body>
       <script src="javascript/scripts.js"></script>

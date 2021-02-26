@@ -108,59 +108,6 @@ table, th, td {
 Header
 */
 
-/*
-.header {
-	order: 1;
-	@media (min-width: 40rem) {
-		grid-column: span 8;
-	}
-}
-
-.header-inner {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 1rem;
-	background-color: #fff;
-	border-bottom: 1px solid #ccc;
-	@media (min-width: 40rem) {
-		flex-direction: row;
-		position: fixed;
-		width: 100%;
-		height: 5rem;
-		top: 0;
-		left: 0;
-		right: 0;
-		z-index: 1;
-	}
-}
-
-.header-logo {
-	display: block;
-}
-
-.top-nav {
-	margin-top: 1rem;
-	@media (min-width: 40rem) {
-		margin-top: 0;
-		margin-left: auto;
-	}
-}
-
-.nav-link {
-	display: inline-block;
-	color: #333;
-	padding: .5rem .75rem;
-	text-decoration: none;
-	&:hover {
-		background-color: #eee;
-		color: #555;
-	}
-}
-
-.logo-link {
-	display: block;
-}*/
 
 /*
 GRID PROPERTIES
@@ -217,7 +164,7 @@ GRID PROPERTIES
   .wrapper {
       display: grid;
       grid-template-columns: 17.5% 52.5% 30%;
-      grid-template-rows: 140px 80px 300px 300px 65px;
+      grid-template-rows: 140px 80px 300px 300px 140px;
       grid-template-areas:
         "header header header"
         "menu progbar progbar"
@@ -414,9 +361,9 @@ GRID PROPERTIES
   Course Specific
   */
 
-  /* Grades */
+  /* Tables (grade.html & teamdetails.html) */
 
-  .gradetable {
+  .gradetable, .teamtable {
     padding: 0;
     margin: auto;
     width: 70%;
@@ -426,7 +373,7 @@ GRID PROPERTIES
     border-collapse: collapse;
   }
 
-  .gradetablehead{
+  .gradetablehead, .teamtablehead{
     color: white;
     background-color: black;
     font-weight: bold;
