@@ -1,3 +1,8 @@
+
+document.getElementById('get_file').onclick = function() {
+    document.getElementById('my_file').click();
+};
+
 function dropdownFunc() {
     document.getElementById("myDropdown").classList.toggle("show");
   }
@@ -15,3 +20,6 @@ function dropdownFunc() {
       }
     }
   }
+
+
+

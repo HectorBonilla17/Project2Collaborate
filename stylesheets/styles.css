@@ -96,6 +96,14 @@ button.classes2{
   width: 175px;
   height: 100px;
 }
+
+
+
+
+table, th, td {
+  border: 1px solid black;
+}
+
 /*
 Header
 */
