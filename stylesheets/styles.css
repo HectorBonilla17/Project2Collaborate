@@ -414,6 +414,25 @@ GRID PROPERTIES
   Course Specific
   */
 
+  /* Grades */
+
+  .gradetable {
+    padding: 0;
+    margin: auto;
+    width: 70%;
+    text-align: center;
+    color:black;
+    background-color: white;
+    border-collapse: collapse;
+  }
+
+  .gradetablehead{
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    height: 40px;
+  }
+
   /* 
   Project Specific
   */
