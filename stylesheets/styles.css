@@ -135,25 +135,33 @@ GRID PROPERTIES
   .menu{
     text-align: left;
     grid-area: menu;
-    background-color:#333;
+    position: relative;
+    background-color: #111;
+    overflow: hidden;
   }
   .progbar{
     text-align: center;
     grid-area: progbar;
-    background-color:orangered;
+    background-color:333;
   }
   .main{
-    text-align: center;
-    background-color:#444;
+    text-align: middle;
+    grid-area: main;
+    background-color:#333;
+    margin: 0px;
+    padding: 30px;
+    font-size: 20px;
   }
+  
   .right{
     text-align: center;
+    grid-area: right1;
     background-color:#333;
   }
   .right2{
     text-align: center;
     grid-area: right2;
-    background-color:#444;
+    background-color:#333;
   }
   .footer{
     text-align: center;
@@ -161,25 +169,37 @@ GRID PROPERTIES
     background-color:#333;
   }
 
-  .wrapper {
-      display: grid;
-      grid-template-columns: 17.5% 52.5% 30%;
-      grid-template-rows: 140px 80px 300px 300px 140px;
-      grid-template-areas:
-        "header header header"
-        "menu progbar progbar"
-        "menu main right1"
-        "menu main right2"
-        "footer footer footer";
-      grid-gap: 10px;
+  .wrapperProject {
+    display: grid;
+    grid-template-columns: 17.5% 52.5% 30%;
+    grid-template-rows: 140px 80px 300px 300px 140px;
+    grid-template-areas:
+      "header header header"
+      "menu progbar progbar"
+      "menu main right1"
+      "menu main right2"
+      "footer footer footer";
+    grid-gap: 10px;
   }
+
+  .wrapperCourse {
+    display: grid;
+    grid-template-columns: 17.5% 52.5% 30%;
+    grid-template-rows: 140px 300px 300px 140px;
+    grid-template-areas:
+      "header header header"
+      "menu main right1"
+      "menu main right1"
+      "footer footer footer";
+    grid-gap: 10px;
+}
 
   .grid-container > div {
       text-align: center;
   }
 
   .signupform{
-    background-color: #444;
+    background-color: #333;
     color: #fff;
     border-radius: 5px;
     padding: 20px;
@@ -273,17 +293,8 @@ GRID PROPERTIES
   /* 
   ----- Menu CSS -----
   */
-  .gridmenu {
-    height: 480px;
-    position: relative;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow: hidden;
-  }
   
-  .gridmenu a {
+  .menu a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
     font-size: 30px;
@@ -297,9 +308,10 @@ GRID PROPERTIES
     font-size: 30px;
     color: blanchedalmond;
     display: block;
+    align-content: left;
   }
   
-  .gridmenu a:hover {
+  .menu a:hover {
     color: lightblue;
   }
   
@@ -383,3 +395,17 @@ GRID PROPERTIES
   /* 
   Project Specific
   */
+
+  .mainproject{
+    text-align: left;
+    background-color:#111;
+    margin: 0px;
+    padding: 30px;
+    font-size: 20px;
+  }
+
+  .mainproject h4{
+
+  }
+
+  .mainproject
