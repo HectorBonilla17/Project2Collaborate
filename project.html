@@ -35,14 +35,16 @@ Make progress bar & List for project page.
 
   <header class="header"> 
     <h1>Header
-        <a class="nav-image" href="selection_student.html"><img src="resources/samplelogo.png" width="160"
-        height="80" style="float:left"> </a> 
-        <div class="dropdown" style="float:right">
-            <button onclick="dropdownFunc()" class="dropbtn">Settings</button>
-            <div id="myDropdown" class="dropdown-content">
-              <a href="usersettings.html">Edit Profile</a>
-            </div>
-          </div> 
+        <a class="nav-image" href="selection_student.html"><img src="" width="160"
+          height="80" style="float:left"> </a> 
+          <div class="dropdown2" style="float:right">
+              <button onclick="dropdownFunc2()" class="dropbtn2">Settings</button>
+              <div id="myDropdown2" class="dropdown-content2">
+                <!--Users will only have access to the user settings based on which account type they are signed in to-->
+                <a href="studentusersettings.html">Edit Student Profile</a>
+                <a href="facultyusersettings.html">Edit Faculty Profile</a>
+              </div>
+            </div> 
         </h1>     
       <!--  
         <a> Logo on the left with routing back to class selection. Dropdown on the right with User settings. </a>
