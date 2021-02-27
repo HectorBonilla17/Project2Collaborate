@@ -30,7 +30,53 @@ StudentID
     <h1> Team Storage </h1>
 </header>
 
-<div class='detailswrapper' style="display:block;">
+<!-- <form method="post" enctype="multipart/form-data">
+  <input type="file" name="files[]" multiple />
+  <input type="submit" value="Upload File" name="submit" />
+</form> -->
+
+<form id="myForm" method="post" enctype="multipart/form-data">
+  Files: <input type="file" id="files" name="files" multiple><br/>
+  <div id="selectedFiles"></div>
+  <input type="submit">
+</form>
+
+<table style="width:75%">
+    <tr>
+      <th>File Name</th>
+      <th>Date Uploaded</th>
+    </tr>
+    <tr>
+      <td>File 1</td>
+      <td>March 30</td>
+
+    </tr>
+    <tr>
+    <td>File 2</td>
+      <td>May 30</td>
+    </tr>
+  </table>
+
+<script>
+  var selDiv = "";
+  document.addEventListener("DOMContentLoaded", init, false);
+  function init() {
+    document.querySelector('#files').addEventListener('change', handleFileSelect, false);
+    selDiv = document.querySelector("#selectedFiles");
+}
+
+  function handleFileSelect(e) {
+    if(!e.target.files) return;
+    selDiv.innerHTML = "";
+    var files = e.target.files;
+    for(var i=0; i<files.length; i++) {
+    var f = files[i];
+    selDiv.innerHTML += f.name + "<br/>";
+}
+
+}
+</script>
+
 
 </div>
 
