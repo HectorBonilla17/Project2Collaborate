@@ -23,5 +23,9 @@ function dropdownFunc() {
     }
   }
 
+  /* user settings submit */
+  document.getElementById("studentSettings").submit();
+  document.getElementById("facultySettings").submit();
+
 /* grades table */
 
