@@ -35,17 +35,26 @@ Login Choice
   align-content: center;
 }
 
-.button-wrapper {
+.course-info{
   display: grid;
   justify-content: center;
   align-content: center;
 
   column-gap: 4px;
   row-gap: 4px;
+}
+
+.button-wrapper {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+
+  column-gap: 50px;
+  row-gap: 150px;
   grid-template-rows: 100px 100px;
   grid-template-columns: 175px 175px;
   width: 600px;
-  height: 300px;
+  height: 600px;
   background-color:whitesmoke;
 }
 
