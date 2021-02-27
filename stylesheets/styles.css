@@ -375,7 +375,7 @@ GRID PROPERTIES
 
   /* Tables (grade.html & teamdetails.html) */
 
-  .gradetable, .teamtable {
+  .gradetable, .teamtable, .subtable{
     padding: 0;
     margin: auto;
     width: 70%;
@@ -385,7 +385,7 @@ GRID PROPERTIES
     border-collapse: collapse;
   }
 
-  .gradetablehead, .teamtablehead{
+  .gradetablehead, .teamtablehead .subtablehead{
     color: white;
     background-color: black;
     font-weight: bold;
@@ -405,7 +405,9 @@ GRID PROPERTIES
   }
 
   .mainproject h4{
-
+    margin:0;
   }
 
-  .mainproject
+  .mainproject a {
+    margin:0;
+  }
