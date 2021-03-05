@@ -23,19 +23,19 @@ function dropdownFunc() {
     }
   }
 
-  function dropdownFunc2() {
-    document.getElementById("myDropdown2").classList.toggle("show");
+  function dropdownFuncProject() {
+    document.getElementById("myDropdownProject").classList.toggle("showProject");
   }
   
   // Close the dropdown menu if the user clicks outside of it
   window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn2')) {
-      var dropdowns = document.getElementsByClassName("dropdown-content2");
+    if (!event.target.matches('.dropbtnProject')) {
+      var dropdowns = document.getElementsByClassName("dropdown-contentProject");
       var i;
       for (i = 0; i < dropdowns.length; i++) {
         var openDropdown = dropdowns[i];
-        if (openDropdown.classList.contains('show')) {
-          openDropdown.classList.remove('show');
+        if (openDropdown.classList.contains('showProject')) {
+          openDropdown.classList.remove('showProject');
         }
       }
     }
