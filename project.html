@@ -37,15 +37,15 @@ Make progress bar & List for project page.
     <h1>Header
         <a class="nav-image" href="selection_student.html"><img src="" width="160"
           height="80" style="float:left"> </a> 
-          <div class="dropdown2" style="float:right">
-              <button onclick="dropdownFunc2()" class="dropbtn2">Settings</button>
-              <div id="myDropdown2" class="dropdown-content2">
+          <div class="dropdownProject">
+              <button onclick="dropdownFuncProject()" class="dropbtnProject">Settings</button>
+              <div id="myDropdownProject" class="dropdownProject-content" >
                 <!--Users will only have access to the user settings based on which account type they are signed in to-->
                 <a href="studentusersettings.html">Edit Student Profile</a>
                 <a href="facultyusersettings.html">Edit Faculty Profile</a>
               </div>
             </div> 
-        </h1>     
+        </h1>       
       <!--  
         <a> Logo on the left with routing back to class selection. Dropdown on the right with User settings. </a>
 -->      
@@ -58,7 +58,7 @@ Make progress bar & List for project page.
     <!-- Menu -->
     <nav class="gridmenu">
       <ul class = "mainbar">
-        <li class = "mainpage"> <a href ="">Course Page</a></li>
+        <li class = "mainpage"> <a href ="course.html">Course Page</a></li>
           <ul>
             <li class = "subpage"><a href = "submissions.html"> Submissions </a></li>
             <li class = "subpage"><a href = "grades.html"> Grades </a></li>
