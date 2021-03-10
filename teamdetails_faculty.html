@@ -1,0 +1,210 @@
+<!doctype html>
+<!--=====================================================================
+For the teams page we need a dynamic JS table for all of the team members
+to be displayed alongside:
+
+Team_members
+  Team ID X
+  Student ID X
+
+Teams
+  TeamID
+  TeamName X
+  CourseID
+  TeamCreatedBy X
+=====================================================================-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Project2Collaborate</title>
+  <meta name="Group 3" content="">
+  <!--<link rel="stylesheet" href="bootstrap?">-->
+  <link rel="stylesheet" href="stylesheets/styles.css">
+  <!-- <link rel="stylesheet" href="stylesheets/bootstrap.min.css"> https://bootswatch.com/slate/ -->
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <!-- google cdn <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+
+  <style>
+    div#buttonDiv {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 10px;
+    }
+  </style>
+
+  <script>
+    let teamDetailsData = [
+      { firstName: 'Krishan', middleName: ' ', lastName: 'Patel', email: 'krishanpatel@mail.com', phoneNumber: '123-456-7890' },
+      { firstName: 'Zining', middleName: ' ', lastName: 'Wang', email: 'ZiningW@mail.com', phoneNumber: '826-563-8563' },
+      { firstName: 'Hector', middleName: ' ', lastName: 'Bonilla', email: 'hbonilla@mail.com', phoneNumber: '193-183-2357' },
+      { firstName: 'Tom', middleName: ' ', lastName: 'Zdanowski', email: 'tomZ@mail.com', phoneNumber: '963-134-7845' },
+      { firstName: 'Ahad', middleName: ' ', lastName: 'Ansari', email: 'AhadAnsari@mail.com', phoneNumber: '194-732-6742' },
+      { firstName: 'Mohamed', middleName: ' ', lastName: 'Elkarem', email: 'moe@mail.com', phoneNumber: '846-264-5836' },
+      { firstName: 'Yousuf', middleName: ' ', lastName: 'Kazmi', email: 'yousuf@mail.com', phoneNumber: '685-745-9384' },
+      { firstName: 'Larry', middleName: 'Larry', lastName: 'Sanders', email: 'larrylarry@mail.com', phoneNumber: ' ' },
+      { firstName: 'Barry', middleName: 'M.', lastName: 'Jackson', email: 'barryJackson@mail.com', phoneNumber: '693-684-8026' },
+      { firstName: 'Gary', middleName: ' ', lastName: 'Marks', email: 'marksGary@mail.com', phoneNumber: '675-193-5724' },
+      { firstName: 'Mary', middleName: ' ', lastName: 'Michaels', email: 'mmichaels@mail.com', phoneNumber: '572-473-2458' },
+      { firstName: 'Sal', middleName: ' ', lastName: 'Peters', email: 'salPeters@mail.com', phoneNumber: '194-274-2847' },
+      { firstName: 'Alex', middleName: ' ', lastName: 'Bush', email: 'alexbush@mail.com', phoneNumber: '967-173-2833' },
+      { firstName: 'Judy', middleName: ' ', lastName: 'Evans', email: 'jevans@mail.com', phoneNumber: '893-290-3490' },
+      { firstName: 'Alan', middleName: ' ', lastName: 'Pong', email: 'alanpong@mail.com', phoneNumber: '984-271-1984' },
+      { firstName: 'Brian', middleName: 'A.', lastName: 'Gate', email: 'briangate@mail.com', phoneNumber: '094-280-9178' },
+      { firstName: 'Sally', middleName: ' ', lastName: 'Price', email: 'sprice@mail.com', phoneNumber: '932-139-2211' },
+      { firstName: 'Janet', middleName: 'I.', lastName: 'Davis', email: 'jDavis@mail.com', phoneNumber: '908-453-9780' },
+      { firstName: 'Mark', middleName: ' ', lastName: 'Miller', email: 'MarkMiller@mail.com', phoneNumber: '879-546-2390' },
+      { firstName: 'Sophie', middleName: ' ', lastName: 'Costanza', email: 'sophiecostanza@mail.com', phoneNumber: '548-348-4599' }
+    ];
+    
+    window.onload = () => {
+      loadTableData(teamDetailsData);
+    };
+    
+    function loadTableData(teamDetailsData) {
+      const tableBody = document.getElementById('teamDetailsBody');
+      let dataHtml = '';
+      
+      for(let teamDetail of teamDetailsData) {
+        dataHtml += `<tr><td>${teamDetail.firstName}</td><td>${teamDetail.middleName}</td><td>${teamDetail.lastName}</td><td>${teamDetail.email}</td><td>${teamDetail.phoneNumber}</td></tr>`;
+      }
+
+      tableBody.innerHTML = dataHtml;
+    }
+  </script>
+</head>
+
+<header>
+    <h1> Team Name (insert team name) </h1>
+    <h1> Course Name (insert course ID) </h1>
+</header>
+
+<div id="buttonDiv">
+  <input type="button" id="teams_createrow" value="Create Team Member" onclick="createTeamMember();">
+  &nbsp;
+  <input type="button" id="teams_updaterow" value="Update Team Member" onclick="updateTeamMember();">
+  &nbsp;
+  <input type="button" id="teams_deleterow" value="Delete Team Member" onclick="deleteTeamMember();">
+</div>
+
+<script>
+  <!-- function to create a new row in the table -->
+  function createTeamMember() {
+    var firstName = prompt("Please enter the first name of the student you want to add to this team.");
+    var	middleName = prompt("Please enter the middle name of the student you want to add to this team (enter a space if the student does not have a middle name).");
+    var	lastName = prompt("Please enter the last name of the student you want to add to this team.");
+    var	email = prompt("Please enter the email of the student you want to add to this team.");
+    var	phoneNumber = prompt("Please enter the phone number of the student you want to add to this team (enter a space if the student does not have a phone number).");
+
+    if (firstName == null || firstName == "" || middleName == null || middleName == "" || lastName == null || lastName == "" || email == null || email == "" || phoneNumber == null || phoneNumber == "") {
+      alert("Please fill in all of the boxes.");
+    }
+    else {
+      var row = document.getElementById("teamDetailsTable").insertRow(-1);
+      (row.insertCell(0)).innerHTML = firstName;
+      (row.insertCell(1)).innerHTML = middleName;
+      (row.insertCell(2)).innerHTML = lastName;
+      (row.insertCell(3)).innerHTML = email;
+      (row.insertCell(4)).innerHTML = phoneNumber;
+    }
+  }
+
+  <!-- function to update a row in the table -->
+  function updateTeamMember() {
+    var currentEmail = prompt("Please enter the email of the student you want to update.");
+
+    if (currentEmail == null || currentEmail == "") {
+      alert("Please enter a valid email.");
+    }
+    else {
+      var newFirstName = prompt("Please enter a new first name to update the first name of this student. Leave this box empty if you do not want to change this student's first name.");
+      var newMiddleName = prompt("Please enter a new middle name to update the middle name of this student. Leave this box empty if you do not want to change this student's middle name.");
+      var newLastName = prompt("Please enter a new last name to update the last name of this student. Leave this box empty if you do not want to change this student's last name.");
+      var newEmail = prompt("Please enter a new email to update the email of this student. Leave this box empty if you do not want to change this student's email.");
+      var newPhoneNumber = prompt("Please enter a new phone number to update the phone number of this student. Leave this box empty if you do not want to change this student's phone number.");
+
+      alert("newFirstName = " + newFirstName);
+      alert("newMiddleName = " + newMiddleName);
+      alert("newLastName = " + newLastName);
+      alert("newEmail = " + newEmail);
+      alert("newPhoneNumber = " + newPhoneNumber);
+
+      var index = new Number();
+
+      for (i = 0; i <= document.getElementById("teamDetailsTable").rows.length; i++) {
+        if (document.getElementById("teamDetailsTable").rows[i].cells[3].innerHTML == currentEmail) {
+          alert("index found! " + i);
+          index = i;
+          alert("1: index = " + index);
+          break;
+        }
+      }
+
+      alert("2: index = " + index);
+      var rowData = document.getElementById("teamDetailsTable").rows[index].cells;
+
+      if (newFirstName != null && newFirstName != "") {
+        rowData[0].innerHTML = newFirstName;
+      }
+
+      if (newMiddleName != null && newMiddleName != "") {
+       	rowData[1].innerHTML = newMiddleName;
+      }
+
+      if (newLastName != null && newLastName != "") {
+       	rowData[2].innerHTML = newLastName;
+      }
+
+      if (newEmail != null && newEmail != "") {
+       	rowData[3].innerHTML = newEmail;
+      }
+
+      if (newPhoneNumber != null && newPhoneNumber != "") {
+       	rowData[4].innerHTML = newPhoneNumber;
+      }
+    }
+  }
+
+  <!-- function to delete a row from the table -->
+  function deleteTeamMember() {
+    var email = prompt("Please enter the email of the student you want to remove from this team.");
+
+    if (email == null || email == "") {
+      alert("Please enter a valid email.");
+    }
+    else {
+      var index = new Number();
+
+      for (i = 0; i <= document.getElementById("teamDetailsTable").rows.length; i++) {
+        if (document.getElementById("teamDetailsTable").rows[i].cells[3].innerHTML == email) {
+          index = i;
+          alert("1: index = " + index);
+          break;
+        }
+      }
+      alert("2: index = " + index);
+      document.getElementById("teamDetailsTable").deleteRow(index);
+    }
+  }
+</script>
+
+<div class='detailswrapper' style="display:block;">
+  <table class="teamtable" id="teamDetailsTable">
+    <thead class="teamtablehead">
+      <tr class="teamheaderrow">
+        <th>First Name</th>
+        <th>Middle Name</th>
+        <th>Last Name</th>
+        <th>Student Email</th>
+        <th>Phone</th>
+      </tr>
+    </thead>
+    <tbody class="teamtablebody" id="teamDetailsBody"></tbody>
+  </table>
+</div>
+
+  <body>
+      <script src="javascript/scripts.js"></script>
+  </body>
+</html>
