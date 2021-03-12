@@ -8,6 +8,10 @@ body {
     background-color:dimgray;
 }
 
+.textblanchedalmond{
+  color: blanchedalmond;
+}
+
 #container{
   width: 90%;
   text-align: center;
@@ -29,7 +33,7 @@ Login Choice
   display: grid;
   justify-content: center;
   align-content: center;
-
+  color: blanchedalmond;
   column-gap: 4px;
   row-gap: 4px;
 }
@@ -45,12 +49,12 @@ Login Choice
   grid-template-columns: 175px 175px;
   width: 600px;
   height: 600px;
-  background-color:whitesmoke;
+  background-color:#262424
 }
 
 button.loginselect{
-  color:blanchedalmond;
-  background-color: black;
+  color:#111;
+  background-color: white;
   font-size: 40px;
   font-weight: 700;
   margin: 0;
@@ -154,9 +158,74 @@ html, body {
 font-size: x-large;
   transform: translate(40%, 500%);
 height: auto;
-
 }
+/* Login Updated CSS */
+.Login-Container, .loginchoice-container {
+  width: 50%;
+  height: 70%;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color:#262424;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 2px black;
+}
+
+.login-body {
+  height: 100%;
+  margin: 0;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  background-color:#fff;
+}
+
+#login-form {
+  align-self: flex-start;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.login-field{
+  height: 25px;
+  width: 200px;
+  border: none;
+  border-bottom: 3px solid black;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  outline: none;
+  background-color:white;
+  padding: 0px 0px 5px 5px;
+}
+
+.login-header, .alt-options{
+  color:antiquewhite;
+  margin-bottom: 5px;
+}
+
+#faculty-submit, #student-submit {
+  width: 100%;
+  padding: 7px;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  background-color:antiquewhite;
+  cursor: pointer;
+}
+
+.submitblanchedalmond {
+  width: 100%;
+  padding: 7px;
+  border-radius: 5px;
+  color: black;
+  font-weight: bold;
+  background-color:antiquewhite;
+  cursor: pointer;
+}
+
 /*
+
 Class Selection
 */
 
@@ -165,26 +234,16 @@ h2{
   text-align: center;
 }
 
-button.classes1{
-  color:blanchedalmond;
-  background-color: black;
+button.classes{
+  color:black;
+  background-color: white;
   font-size: 40px;
   font-weight: 700;
   margin: 0;
   position: relative;
   width: 175px;
   height: 100px;
-}
-
-button.classes2{
-  color:blanchedalmond;
-  background-color: black;
-  font-size: 40px;
-  font-weight: 700;
-  margin: 0;
-  position: relative;
-  width: 175px;
-  height: 100px;
+  cursor:pointer;
 }
 
 

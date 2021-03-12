@@ -49,3 +49,20 @@ function dropdownFunc() {
 
 /* grades table */
 
+/* Login Faculty/Student */
+const loginForm = document.getElementById("login-form");
+const loginButton = document.getElementById("login-submit");
+
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.username.value;
+    const password = loginForm.password.value;
+
+    if (username === "student@depaul.edu" && password === "csc394" || username === "faculty@depaul.edu" && password === "csc394") {
+        alert("You are now logged in!");
+        location.reload();
+    } else {
+        alert("Your login credentials were incorrect!");
+        location.reload();
+    }
+})

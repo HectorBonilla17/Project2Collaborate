@@ -5,28 +5,23 @@
     <meta name= 'viewport'
     content="width=device-width, intiial-scale =1.0">
     <meta charset="utf-8">
-    <title>Project2Colaborate Login</title>
-
+    <title>Login</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <script defer src="javascript/scripts.js"></script>
   </head>
+      
+  <body class = "login-body"> 
 
-<header>Faculty Login</header>
-      
-  <body> 
-    <link rel="stylesheet" href="style.css">
-    <title>Simply Slate</title>
-    <link rel ='shorcut icon' href = 'images/favicon.ico'>
- 
-     
-     <div class ='form'>
-     <form class = 'login-form' action = '' method="post">
-      
-      <i class="fas fa-users"></i>
-      <input class = 'user-input' type = 'text' name = '' placeholder="Email" required>
-      <input class = 'user-input' type = 'password' name = '' placeholder="Password" required>
-      <div class = 'login1'>
-        <label class = 'remeber-me'> 
-          <input type = 'checkbox' name= ''> Rememeber Me 
-        </label>
-       <a href="facultyforgotpassword.html">Forgot your password?</a>
-        </div>
-       <input class = 'btn' type ="submit" name = '' value="Login"> 
+    <div class="Login-Container">
+      <h1 class = "login-header">Faculty Login</h1>
+    
+     <form action = "selection_faculty.html" method="post" id = 'login-form'>
+        <input type = "text" id="username-faculty" name = "username" placeholder="Email" class = "login-field" required>
+        <input type = "password" id="password-faculty" name = "password" placeholder="Password" class = "login-field" required>
+        <a href="facultyforgotpassword.html" class = "alt-options">Forgot your password?</a>
+        <a href="createaccount.html" class = "alt-options">Create Account</a>
+        <input type = "submit" value="Login" id="faculty-submit">
+      </form>
+
+      </div>
+    </body>
