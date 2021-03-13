@@ -20,16 +20,11 @@ making the remaining pages here.
   <!-- google cdn <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
 </head>
 
-<header>
-    <h1> Course Page (temporary) </h1>
-</header>
-
 <div class="wrapperCourse"> <!-- WRAPPER FOR ENTIRE GRID, CAREFUL-->
 
   <header class="header"> 
-    <h1>Header
-        <a class="nav-image" href="selection_student.html"><img src="" width="160"
-        height="80" style="float:left"> </a> 
+        <a class="nav-image" href="selection_student.html"><img src="resources/project2collab2.png" width="200"
+        height="100"> </a> 
         <div class="dropdown">
             <button onclick="dropdownFunc()" class="dropbtn">Settings</button>
             <div id="myDropdown" class="dropdown-content">
@@ -37,8 +32,7 @@ making the remaining pages here.
               <a href="studentusersettings.html">Edit Student Profile</a>
               <a href="facultyusersettings.html">Edit Faculty Profile</a>
             </div>
-          </div> 
-        </h1>     
+          </div>    
       <!--  
         <a> Logo on the left with routing back to class selection. Dropdown on the right with User settings. </a>
 -->      
@@ -66,15 +60,15 @@ making the remaining pages here.
   <!-- holds link to project page, content, grades, assignments, etc..-->
   <div class="main">
     <h4>Assignment One</h4>
-     <a download href="/resources/assignment1.html">
+     <a download href="/resources/assignment1.html" class = "downloadlinks">
        Download
      </a><br>
      <h4>Assignment Two</h4>
-     <a download href="/resources/assignment2.html">
+     <a download href="/resources/assignment2.html"class = "downloadlinks">
        Download
      </a><br>
      <h4>Assignment Three</h4>
-     <a download href="/resources/assignment3.html">
+     <a download href="/resources/assignment3.html"class = "downloadlinks">
        Download
      </a><br>
     <!-- Add a file upload here so the professor can upload documents.-->
@@ -82,10 +76,26 @@ making the remaining pages here.
   </div>
   <!-- main course contents and list in project-->
   <div class="box right">
-    <h2>Right 1</h2>
-    <a>
-      News feed?
-    </a>
+    <h4>News Feed:</h4>
+    <div class="newsfeed" id = "newsf1">
+      <h3> News! </h3>
+      <p> Today in the news we have.. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf2">
+      <h3> News! </h3>
+      <p> Today in the news we have.. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf3">
+      <h3> News! </h3>
+      <p> Today in the news we have.. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf4">
+      <h3> News! </h3>
+      <p> Today in the news we have.. <p>
+    </div>
   </div>
   <!-- future use case?-->
   <div class="footer">

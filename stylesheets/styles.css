@@ -5,7 +5,7 @@ Global Properties
 
 body {
     margin: 20px;
-    background-color:dimgray;
+    background-color:white;
 }
 
 .textblanchedalmond{
@@ -49,11 +49,11 @@ Login Choice
   grid-template-columns: 175px 175px;
   width: 600px;
   height: 600px;
-  background-color:#262424
+  background-color:#262424;
 }
 
 button.loginselect{
-  color:#111;
+  color:#262424;
   background-color: white;
   font-size: 40px;
   font-weight: 700;
@@ -69,7 +69,7 @@ button.loginselect{
 Login
 */
 .signupform{
-  background-color: #333;
+  background-color: #262424;
   color: #fff;
   border-radius: 5px;
   padding: 20px;
@@ -251,17 +251,13 @@ table, th, td {
   border: 1px solid black;
 }
 
-/*
-Header
-*/
-
 
 /*
 GRID PROPERTIES
 */
 
   .box{
-      background-color: #444;
+      background-color:#262424;
       color: #fff;
       border-radius: 5px;
       padding: 20px;
@@ -271,26 +267,27 @@ GRID PROPERTIES
   .header{
     text-align: center;
     grid-area: header;
-    background-color:#333;
+    background-color:#262424;
   }
   
   .menu{
     text-align: left;
     grid-area: menu;
     position: relative;
-    background-color: #111;
+    background-color: #262424;
     overflow: hidden;
+
   }
   .progbar{
     text-align: center;
     grid-area: progbar;
-    background-color:333;
+    background-color:#262424;
   }
 
   .main{
     text-align: middle;
     grid-area: main;
-    background-color:#333;
+    background-color:#262424;
     margin: 0px;
     padding: 30px;
     font-size: 20px;
@@ -299,17 +296,17 @@ GRID PROPERTIES
   .right{
     text-align: center;
     grid-area: right1;
-    background-color:#333;
+    background-color:#262424;
   }
   .right2{
     text-align: center;
     grid-area: right2;
-    background-color:#333;
+    background-color:#262424;
   }
   .footer{
     text-align: center;
     grid-area: footer;
-    background-color:#333;
+    background-color:#262424;
   }
 
   .wrapperProject {
@@ -328,13 +325,13 @@ GRID PROPERTIES
   .wrapperCourse {
     display: grid;
     grid-template-columns: 17.5% 52.5% 30%;
-    grid-template-rows: 140px 300px 300px 140px;
+    grid-template-rows: 120px 400px 400px 120px;
     grid-template-areas:
       "header header header"
       "menu main right1"
       "menu main right1"
       "footer footer footer";
-    grid-gap: 10px;
+    grid-gap: 5px;
 }
 
   .grid-container > div {
@@ -372,26 +369,36 @@ GRID PROPERTIES
     font-size: 20px; 
   }
 
+  /* header */
+
+  .nav-image {
+    float: left;
+    margin-left: 50px;
+    margin-top: 5px;
+    
+  }
 
   /* Dropdown Button */
   .dropbtn {
-    background-color: #3498DB;
-    color: white;
+    background-color:white;
+    color: black;
     padding: 10px;
-    font-size: 16px;
+    font-size: 20px;
     border: none;
     cursor: pointer;
   }
 
   .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
+    background-color: blanchedalmond;
   }
-
+  
   .dropdown {
-    position: relative;
+   position: relative;
    float: right;
-   width: 10%;
-   margin-right: 0px;
+   width: 4.75%;
+   margin-right: 40px;
+   margin-top: 40px;
+   align-content: center;
   }
 
   .dropdown-content {
@@ -459,6 +466,54 @@ GRID PROPERTIES
   /*
   Course Specific
   */
+
+  /* Download Assignments */
+
+  h4 {
+    color: white;
+  }
+
+  .downloadlinks{
+    color: blanchedalmond;
+  }
+
+  .downloadlinks:hover{
+    color: #2471a3;
+  }
+
+  /* News Feed 
+  https://codepen.io/tommot4747/pen/rNWPZpz
+  */
+  .newsfeed {
+    background-color: white;
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 4px 8px #a93226 ;
+  }
+
+  #newsf2 {
+    background-color: white;
+    box-shadow: 4px 8px #229954 ;
+  }
+
+  #newsf3 {
+    background-color: white;
+    box-shadow: 4px 8px #d4ac0d  ;
+  }
+
+  #newsf4 {
+    background-color: white;
+    box-shadow: 4px 8px #2471a3 ;
+  }
+
+  .newsfeed h3 {
+    color:rgb(0, 0, 0);
+  }
+
+  .newsfeed p {
+    color:rgb(0, 0, 0);
+    font-size: 10px;
+  }
 
   /* Tables (grade.html & teamdetails.html) */
 
