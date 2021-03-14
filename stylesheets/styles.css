@@ -318,7 +318,7 @@ GRID PROPERTIES
   .wrapperProject {
     display: grid;
     grid-template-columns: 17.5% 52.5% 30%;
-    grid-template-rows: 120px 100px 400px 400px 120px;
+    grid-template-rows: 120px 150px 400px 400px 120px;
     grid-template-areas:
       "header header header"
       "menu progbar right"
@@ -579,6 +579,77 @@ GRID PROPERTIES
   .mainproject a {
     margin:0;
   }
+
+  #phase1 {
+    background: #a93226;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    left: 0px;
+  }
+
+  #phase2 {
+    background: #229954;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    left: 150px;
+    bottom: 150px;
+  } 
+
+  #phase3 {
+    background: #d4ac0d;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    left: 300px;
+    bottom: 300px;
+  } 
+
+  #phase4 {
+    background: #2471a3;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    left: 450px;
+    bottom: 450px;
+  } 
+
+  #phase5 {
+    background:  #884ea0;
+    color: #fff;
+    width: 100px;
+    height: 100px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    left: 600px;
+    bottom: 600px;
+  } 
+
+  #phase6 {
+    background:  blanchedalmond;
+    color: #fff;
+    width: 200px;
+    height: 100px;
+    padding: 25px;
+    text-align: center;
+    position: relative;
+    left: 750px;
+    bottom: 750px;
+  } 
 
   /* 
   MEDIA QUERIES
