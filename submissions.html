@@ -1,8 +1,11 @@
 <!doctype html>
 <!--=====================================================================
-For the submissions page we need a file upload/download option for both 
-the professor and student. We can also include a text box where we can 
-put comments or etc.. (later) 
+For the course page we need to develop the layout and main functionality 
+of the page so that we can copy the layout over to the other course pages
+and the project page.
+
+After we test faculty/student relations in login/selection, we will be 
+making the remaining pages here.
 =====================================================================-->
 <html lang="en">
 <head>
@@ -17,72 +20,140 @@ put comments or etc.. (later)
   <!-- google cdn <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
 </head>
 
-<header>
-    <h1> Submission </h1>
-</header>
+<div class="wrapperCourse"> <!-- WRAPPER FOR ENTIRE GRID, CAREFUL-->
 
-<div class='submissionwrapper' style="display:block;">
-  <table class ="subtable">
-    <thead class ="subtablehead">
-      <tr class="subheaderrow">
-        <th>Assignment Name</th>
-        <th>Date</th>
-        <th>Submission Date</th>
-        <th>Due Date</th>
-        <th>Submission Timestamp</th>
-        <th>Submission Comment</th>
-        <th>Upload</th>
-        <th>Download</th>
-      </tr>
-    </thead>
-    <tbody class = "subtablebody">
-      <tr>
-        <td>Homework #1</td>
-        <td>12/30/2021</td>
-        <td></td>
-        <td>12/30/2021 23:59:00</td>
-        <td></td>
-        <td></td>
-        <th><input type="file" id="my_file"/></th>
-        <th><a href="#" role="button">Download</a></th>
-      </tr>
-      <tr>
-        <td>Homework #2</td>
-        <td>3/30/2021</td>
-        <td>2/26/2021</td>
-        <td>3/30/2021 23:59:00</td>
-        <td>2/26/2021 23:45:30</td>
-        <td>Done with homework!</td>
-        <th><input type="file" id="my_file"/></th>
-        <th><a href="#" role="button">Download</a></th>
-      </tr>
-      <tr>
-        <td>Homework #3</td>
-        <td>5/30/2021</td>
-        <td>4/29/2021</td>
-        <td>5/30/2021 23:59:00</td>
-        <td>5/29/2021 12:48:30</td>
-        <td>on time!</td>
-        <th><input type="file" id="my_file"/></th>
-        <th><a href="#" role="button">Download</a></th>
-      </tr>
-      <tr>
-        <th><input type="button" id="submission_submit" value="Submit Submission"></th>
-        <th><input type="button" id="submission_delete" value="Delete Row"></th>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      
-    </tbody>
-  </table>
-</div>
+  <header class="header"> 
+        <a class="nav-image" href="selection_student.html"><img src="resources/project2collab2.png" width="200"
+        height="100"> </a> 
+        <div class="dropdown">
+            <button onclick="dropdownFunc()" class="dropbtn">Settings</button>
+            <div id="myDropdown" class="dropdown-content">
+              <!--Users will only have access to the user settings based on which account type they are signed in to-->
+              <a href="studentusersettings.html">Edit Student Profile</a>
+              <a href="facultyusersettings.html">Edit Faculty Profile</a>
+            </div>
+          </div>    
+  
+  </header>
 
-  <body>
-      <script src="javascript/scripts.js"></script>
-  </body>
+   <!-- Left Side Navigation Menu -->
+  <nav class="menu">
+      <ul class = "mainbar">
+        <li class = "mainpage"> <a href ="">Course Page</a></li>
+          <ul>
+            <li class = "subpage"><a href = "submissions.html"> Submissions </a></li>
+            <li class = "subpage"><a href = "grades.html"> Grades </a></li>
+          </ul>
+        <li class = "mainpage"> <a href ="project.html">Project Page</a></li> 
+          <ul>
+            <li class = "subpage"><a href = "teamstorage.html"> Team Storage </a></li>
+            <li class = "subpage"><a href = "teamdetails.html"> Team Details </a></li>
+          </ul>
+      </ul>
+    </nav>  
+  <!-- Main text body of Course Pages-->
+  <div class="main">
+      <div class='submissionwrapper' style="display:block;">
+        <table class ="subtable" style=font-size:medium;>
+          <thead class ="subtablehead">
+            <tr class="subheaderrow">
+              <th>Assignment Name</th>
+              <th>Date</th>
+              <th>Submission Date</th>
+              <th>Due Date</th>
+              <th>Submission Timestamp</th>
+              <th>Submission Comment</th>
+              <th>Upload</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <tbody class = "subtablebody">
+            <tr>
+              <td>Homework #1</td>
+              <td>12/30/2021</td>
+              <td></td>
+              <td>12/30/2021 23:59:00</td>
+              <td></td>
+              <td></td>
+              <th><input type="file" id="my_file"/></th>
+              <th><a href="#" role="button">Download</a></th>
+            </tr>
+            <tr>
+              <td>Homework #2</td>
+              <td>3/30/2021</td>
+              <td>2/26/2021</td>
+              <td>3/30/2021 23:59:00</td>
+              <td>2/26/2021 23:45:30</td>
+              <td>Done with homework!</td>
+              <th><input type="file" id="my_file"/></th>
+              <th><a href="#" role="button">Download</a></th>
+            </tr>
+            <tr>
+              <td>Homework #3</td>
+              <td>5/30/2021</td>
+              <td>4/29/2021</td>
+              <td>5/30/2021 23:59:00</td>
+              <td>5/29/2021 12:48:30</td>
+              <td>on time!</td>
+              <th><input type="file" id="my_file"/></th>
+              <th><a href="#" role="button">Download</a></th>
+            </tr>
+            <tr>
+              <th><input type="button" id="submission_submit" value="Submit Submission"></th>
+              <th><input type="button" id="submission_delete" value="Delete Row"></th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>         
+          </tbody>
+        </table>
+      </div>
+    <br>
+    <!-- Add a file upload here so the professor can upload documents.-->
 
+  </div>
+  <!-- Right Sidebar "News Feed"-->
+  <div class="box right">
+    <h4>News Feed:</h4>
+    <div class="newsfeed" id = "newsf1">
+      <h3> Homework 6 Upcoming Due Date </h3>
+      <p> Homework 6 [Team Homework Project Presentation] is due on March 15th. We will meet on zoom and have your demo ready to present. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf2">
+      <h3> Homework 7 Upcoming Due Date </h3>
+      <p> Homework 7 [Team Homework Project Documentation] is due on March 15th. We will meet on zoom and have your documentation ready to present. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf3">
+      <h3> Homework 8 Upcoming Due Date </h3>
+      <p> Homework 8 [Individual Assessment of your work] is due on March 15th. Submission will be reviewed and not discussed on zoom. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf4">
+      <h3> Homework 9 Upcoming Due Date </h3>
+      <p> Homework 9 [Individual Weekly Logs] is due on March 15th. All cumulative weekly logs throughout the quarter are expected to be completed and submitted by this date. <p>
+    </div>
+  </div>
+  <!-- FOOTER -->
+  <div class="footer">
+      <p> 
+        These are the Terms and Conditions governing the use of Project2Collaborate and the agreement that operates between you as a user and P2C. 
+        These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+        Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. 
+        These Terms and Conditions apply to all visitors, users and others who access or use this service.
+        By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+        You represent that you are enrolled at the select university. The Company does not permit those under 18 to use the Service or alternate permissions.
+        Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. 
+        Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when 
+        You use the application and tells you about your privacy rights and how the law protects You. 
+        Please read Our Privacy Policy carefully before using Our Service.
+        <h6>Copyright &copy; 2021 All Rights Reserved by Project2Collaborate (P2C)</h6>
+        <br><br>
+      </p>
+    </div>
+  </div>
 </html>
