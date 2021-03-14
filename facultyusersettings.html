@@ -21,28 +21,100 @@ For more information, please check the database diagram.
   <!-- google cdn <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
 </head>
 
-<header>
-    <h1> Faculty Account Settings </h1>
+<div class="wrapperCourse"> <!-- WRAPPER FOR ENTIRE GRID, CAREFUL-->
 
-    <form id="facultySettings">
-      <label for="changeFName">Change First Name:</label>
-      <input type="text" id="changeFName" name="changeFName" value="Jane"><br><br>
-      <label for="changeMName">Change Middle Name:</label>
-      <input type="text" id="changeMName" name="changeMName" value="Mary"><br><br>
-      <label for="changeLName">Change Last Name:</label>
-      <input type="text" id="changeLName" name="changeLName" value="Doe"><br><br>
-      <label for="changeEmail">Change E-mail address:</label>
-      <input type="text" id="changeEmail" name="changeEmail" value="example@example.com"><br><br>
-      <label for="changeNumber">Change Phone Number:</label>
-      <input type="text" id="changeNumber" name="changeNumber" value="123-456-7890"><br><br>
-      <label for="changeJobTitle">Change Job Title:</label>
-      <input type="text" id="changeJobTitle" name="changeJobTitle" value="Professor"><br><br>
-      <input type="submit" value="Submit">
-    </form>
+  <header class="header"> 
+        <a class="nav-image" href="selection_faculty.html"><img src="resources/project2collab2.png" width="200"
+        height="100"> </a> 
+        <div class="dropdown">
+            <button onclick="dropdownFunc()" class="dropbtn">Settings</button>
+            <div id="myDropdown" class="dropdown-content">
+              <!--Users will only have access to the user settings based on which account type they are signed in to-->
+              <a href="facultyusersettings.html">Edit Faculty Profile</a>
+              <a href="login_choice.html">Logout</a>
+            </div>
+          </div>    
+  
+  </header>
 
+  <!-- logo should return back to course selection-->
+  <!--<div class="box nav">Navigation</div> commented out for now
+   navigates across majority of course "main pages"-->
+  <nav class="menu">
+    <!-- Menu -->
+      <ul class = "mainbar">
+        <li class = "mainpage"> <a href ="course_faculty.html">Course Page</a></li>
+          <ul>
+            <li class = "subpage"><a href = "submissions_faculty.html"> Submissions </a></li>
+            <li class = "subpage"><a href = "grades_faculty.html"> Grades </a></li>
+          </ul>
+        <li class = "mainpage"> <a href ="project_faculty.html">Project Page</a></li> 
+        <!-- will hold the progress bar and each box will link to that phase -->
+          <ul>
+            <li class = "subpage"><a href = "teamstorage_faculty.html"> Team Storage </a></li>
+            <li class = "subpage"><a href = "teamdetails_faculty.html"> Team Details </a></li>
+          </ul>
+      </ul>
+    </nav>  
+  <!-- holds link to project page, content, grades, assignments, etc..-->
+  <form id="facultySettings">
+    <label for="changeFName">Change First Name:</label>
+    <input type="text" id="changeFName" name="changeFName" value="Jane"><br><br>
+    <label for="changeMName">Change Middle Name:</label>
+    <input type="text" id="changeMName" name="changeMName" value="Mary"><br><br>
+    <label for="changeLName">Change Last Name:</label>
+    <input type="text" id="changeLName" name="changeLName" value="Doe"><br><br>
+    <label for="changeEmail">Change E-mail address:</label>
+    <input type="text" id="changeEmail" name="changeEmail" value="example@example.com"><br><br>
+    <label for="changeNumber">Change Phone Number:</label>
+    <input type="text" id="changeNumber" name="changeNumber" value="123-456-7890"><br><br>
+    <label for="changeJobTitle">Change Job Title:</label>
+    <input type="text" id="changeJobTitle" name="changeJobTitle" value="Professor"><br><br>
+    <input type="submit" value="Submit">
+  </form>
+    <!-- Add a file upload here so the professor can upload documents.-->
 
-</header>
-
+  </div>
+  <!-- main course contents and list in project-->
+  <div class="box right">
+    <h4>News Feed:</h4>
+    <div class="newsfeed" id = "newsf1">
+      <h3> Homework 6 Upcoming Due Date </h3>
+      <p> Homework 6 [Team Homework Project Presentation] is due on March 15th. We will meet on zoom and have your demo ready to present. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf2">
+      <h3> Homework 7 Upcoming Due Date </h3>
+      <p> Homework 7 [Team Homework Project Documentation] is due on March 15th. We will meet on zoom and have your documentation ready to present. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf3">
+      <h3> Homework 8 Upcoming Due Date </h3>
+      <p> Homework 8 [Individual Assessment of your work] is due on March 15th. Submission will be reviewed and not discussed on zoom. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf4">
+      <h3> Homework 9 Upcoming Due Date </h3>
+      <p> Homework 9 [Individual Weekly Logs] is due on March 15th. All cumulative weekly logs throughout the quarter are expected to be completed and submitted by this date. <p>
+    </div>
+  </div>
+  <!-- future use case?-->
+  <div class="footer">
+    <p> 
+      These are the Terms and Conditions governing the use of Project2Collaborate and the agreement that operates between you as a user and P2C. 
+      These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+      Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. 
+      These Terms and Conditions apply to all visitors, users and others who access or use this service.
+      By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+      You represent that you are enrolled at the select university. The Company does not permit those under 18 to use the Service or alternate permissions.
+      Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. 
+      Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when 
+      You use the application and tells you about your privacy rights and how the law protects You. 
+      Please read Our Privacy Policy carefully before using Our Service.
+      <h6>Copyright &copy; 2021 All Rights Reserved by Project2Collaborate (P2C)</h6>
+      <br><br>
+    </p>
+  </div>
  
 
   <body>
