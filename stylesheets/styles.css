@@ -25,12 +25,15 @@ Login Choice
 
 .login-container{
   display: grid;
+  grid: repeat(auto-fit);
+
   justify-content: center;
   align-content: center;
 }
 
 .course-info{
   display: grid;
+  
   justify-content: center;
   align-content: center;
   color: blanchedalmond;
