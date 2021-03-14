@@ -292,17 +292,23 @@ GRID PROPERTIES
     padding: 30px;
     font-size: 20px;
   }
+
+  .mainproject{
+    text-align: left;
+    grid-area: mainproj;
+    margin: 0px;
+    padding: 30px;
+    font-size: 20px;
+    background-color:#262424;
+  }
   
   .right{
     text-align: center;
-    grid-area: right1;
+    grid-area: right;
     background-color:#262424;
+    overflow-y: scroll;
   }
-  .right2{
-    text-align: center;
-    grid-area: right2;
-    background-color:#262424;
-  }
+
   .footer{
     text-align: center;
     grid-area: footer;
@@ -312,14 +318,14 @@ GRID PROPERTIES
   .wrapperProject {
     display: grid;
     grid-template-columns: 17.5% 52.5% 30%;
-    grid-template-rows: 140px 80px 300px 300px 140px;
+    grid-template-rows: 120px 100px 400px 400px 120px;
     grid-template-areas:
       "header header header"
-      "menu progbar progbar"
-      "menu main right1"
-      "menu main right2"
+      "menu progbar right"
+      "menu mainproj right"
+      "menu mainproj right"
       "footer footer footer";
-    grid-gap: 10px;
+    grid-gap: 5px;
   }
 
   .wrapperCourse {
@@ -328,8 +334,8 @@ GRID PROPERTIES
     grid-template-rows: 120px 400px 400px 120px;
     grid-template-areas:
       "header header header"
-      "menu main right1"
-      "menu main right1"
+      "menu main right"
+      "menu main right"
       "footer footer footer";
     grid-gap: 5px;
 }
@@ -346,7 +352,7 @@ GRID PROPERTIES
   .menu a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 25px;
     color: white;
     display: block;
   }
@@ -354,7 +360,7 @@ GRID PROPERTIES
   .mainpage a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 25px;
     color: blanchedalmond;
     display: block;
     align-content: left;
@@ -367,6 +373,7 @@ GRID PROPERTIES
   .main { /* will primarily hold a list full of links to pages with content. */
     margin-left: 0%; 
     font-size: 20px; 
+    overflow-y: scroll; 
   }
 
   /* header */
@@ -375,7 +382,6 @@ GRID PROPERTIES
     float: left;
     margin-left: 50px;
     margin-top: 5px;
-    
   }
 
   /* Dropdown Button */
@@ -424,23 +430,25 @@ GRID PROPERTIES
 
 /* Project Page Dropdown */
 .dropbtnProject {
-  background-color: #3498DB;
-    color: white;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
+  background-color:white;
+  color: black;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
 .dropbtnProject:hover, .dropbtnProject:focus {
-  background-color: #2980B9;
+  background-color: blanchedalmond;
 }
 
 .dropdownProject {
   position: relative;
   float: right;
-  width: 10%;
-  margin-right: 0px;
+  width: 4.75%;
+  margin-right: 40px;
+  margin-top: 40px;
+  align-content: center;
 }
 
 .dropdownProject-content {
@@ -458,7 +466,7 @@ GRID PROPERTIES
   padding: 8px 8px;
   text-decoration: none;
   display: block;
-  font-size: 16px
+  font-size: 12px
 }
 
 .showProject {display:block;}
@@ -471,6 +479,13 @@ GRID PROPERTIES
 
   h4 {
     color: white;
+  }
+
+  .downloadHW {
+    background-color: #262424;
+    padding: 5px;
+    border: 2px solid blanchedalmond;
+    text-align: center;
   }
 
   .downloadlinks{
@@ -489,6 +504,7 @@ GRID PROPERTIES
     border: 1px solid;
     padding: 10px;
     box-shadow: 4px 8px #a93226 ;
+    width: 95%;
   }
 
   #newsf2 {
@@ -507,12 +523,30 @@ GRID PROPERTIES
   }
 
   .newsfeed h3 {
-    color:rgb(0, 0, 0);
+    color:black;
+    font-size: 20px;
   }
 
   .newsfeed p {
-    color:rgb(0, 0, 0);
-    font-size: 10px;
+    color:black;
+    font-size: 12px;
+  }
+
+  .footer p {
+    color:white;
+    font-size: 12px;
+    text-align: left;
+    padding: 10px;
+    margin: 2px;
+  }
+
+  .footer h6
+  {
+    color:#fff;
+    font-size:12px;
+    text-transform:uppercase;
+    margin-top:10px;
+    letter-spacing:2px
   }
 
   /* Tables (grade.html & teamdetails.html) */
@@ -537,14 +571,6 @@ GRID PROPERTIES
   /* 
   Project Specific
   */
-
-  .mainproject{
-    text-align: left;
-    background-color:#111;
-    margin: 0px;
-    padding: 30px;
-    font-size: 20px;
-  }
 
   .mainproject h4{
     margin:0;
