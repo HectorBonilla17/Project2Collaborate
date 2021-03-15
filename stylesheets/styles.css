@@ -554,7 +554,7 @@ GRID PROPERTIES
 
   /* Tables (grade.html & teamdetails.html) */
 
-  .gradetable, .teamtable, .subtable{
+  .gradetable, .teamtable, .subtable, .storetable{
     padding: 0;
     margin: auto;
     width: 70%;
