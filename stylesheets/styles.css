@@ -305,6 +305,10 @@ GRID PROPERTIES
     background-color:#262424;
   }
   
+  .mainproject span {
+    color: blanchedalmond;
+  }
+
   .right{
     text-align: center;
     grid-area: right;
