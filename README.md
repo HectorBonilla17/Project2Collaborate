@@ -8,7 +8,7 @@ Created in software projects "CSC394" during Winter 2021 under professor Thomas 
 1. Main (Empty)
 2. Front-End (Front-end code)
 3. Back-End (Back-end code)
-4. Krishan-Front-End (unimplemented front-end)
+4. Krishan-Front-End (unimplemented front-end with Ajax and FTP functions) (NOT OUR FRONT-END PRODUCT, just additional functions in a testing environment)
 
 ## Description
 
