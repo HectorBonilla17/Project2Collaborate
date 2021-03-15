@@ -2,8 +2,12 @@
 CSC394 - Software Project
 
 # Home
-Created in software projects "CSC394" during Winter 2021.
-Professor: Thomas Muscarello
+Created in software projects "CSC394" during Winter 2021 under professor Thomas Muscarello.
+
+## Branch Structure
+1. Main (Empty)
+2. Front-End (Front-end code)
+3. Back-End (Back-end code)
 
 ## Description
 
