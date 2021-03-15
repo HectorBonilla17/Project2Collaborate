@@ -279,8 +279,8 @@ GRID PROPERTIES
     position: relative;
     background-color: #262424;
     overflow: hidden;
-
   }
+
   .progbar{
     text-align: center;
     grid-area: progbar;
