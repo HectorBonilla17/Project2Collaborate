@@ -2,7 +2,7 @@
 Created in software projects "CSC394" during Winter 2021 under professor Thomas Muscarello.
 
 ## Branch Structure
-1. Main (Empty)
+1. Main (ALL OF THE CODE MERGED except Krishan-front-end)
 2. Front-End (Front-end code)
 3. Back-End (Back-end code)
 This is where our back-end code is stored. Here, you will find:
