@@ -1,6 +1,3 @@
-# Project2Collaborate
-CSC394 - Software Project
-
 # Home
 Created in software projects "CSC394" during Winter 2021 under professor Thomas Muscarello.
 
@@ -8,6 +5,11 @@ Created in software projects "CSC394" during Winter 2021 under professor Thomas 
 1. Main (Empty)
 2. Front-End (Front-end code)
 3. Back-End (Back-end code)
+This is where our back-end code is stored. Here, you will find:
+- Old Python files (these files are not used in our current back-end)
+- A database script written in SQL (it creates the tables in a database and fills the tables with data)
+- Two scripts written in Bash (one script contains the back-end functionality and the other script runs the first script every second)
+- A PHP script that works with Ajax code on the front-end to transfer data between the front-end and the back-end (data transfer implementation was unsuccessful)
 4. Krishan-Front-End (unimplemented front-end with Ajax and FTP functions) (NOT OUR FRONT-END PRODUCT, just additional functions in a testing environment)
 
 ## Description
