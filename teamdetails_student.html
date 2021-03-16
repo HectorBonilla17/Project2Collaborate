@@ -1,0 +1,251 @@
+<!doctype html>
+<!--=====================================================================
+For the teams page we need a dynamic JS table for all of the team members
+to be displayed alongside:
+
+Team_members
+  Team ID X
+  Student ID X
+
+Teams
+  TeamID
+  TeamName X
+  CourseID
+  TeamCreatedBy X
+=====================================================================-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Project2Collaborate</title>
+  <meta name="Group 3" content="">
+  <link rel="stylesheet" href="stylesheets/styles.css">     
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- google cdn <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>-->
+  <script>
+    let teamDetailsData = [
+      { firstName: 'Krishan', middleName: ' ', lastName: 'Patel', email: 'krishanpatel@mail.com', phoneNumber: '123-456-7890' },
+      { firstName: 'Zining', middleName: ' ', lastName: 'Wang', email: 'ZiningW@mail.com', phoneNumber: '826-563-8563' },
+      { firstName: 'Hector', middleName: ' ', lastName: 'Bonilla', email: 'hbonilla@mail.com', phoneNumber: '193-183-2357' },
+      { firstName: 'Tom', middleName: ' ', lastName: 'Zdanowski', email: 'tomZ@mail.com', phoneNumber: '963-134-7845' },
+      { firstName: 'Ahad', middleName: ' ', lastName: 'Ansari', email: 'AhadAnsari@mail.com', phoneNumber: '194-732-6742' },
+      { firstName: 'Mohamed', middleName: ' ', lastName: 'Elkarem', email: 'moe@mail.com', phoneNumber: '846-264-5836' },
+      { firstName: 'Yousuf', middleName: ' ', lastName: 'Kazmi', email: 'yousuf@mail.com', phoneNumber: '685-745-9384' },
+      { firstName: 'Larry', middleName: 'Larry', lastName: 'Sanders', email: 'larrylarry@mail.com', phoneNumber: ' ' },
+      { firstName: 'Barry', middleName: 'M.', lastName: 'Jackson', email: 'barryJackson@mail.com', phoneNumber: '693-684-8026' },
+      { firstName: 'Gary', middleName: ' ', lastName: 'Marks', email: 'marksGary@mail.com', phoneNumber: '675-193-5724' },
+      { firstName: 'Mary', middleName: ' ', lastName: 'Michaels', email: 'mmichaels@mail.com', phoneNumber: '572-473-2458' },
+      { firstName: 'Sal', middleName: ' ', lastName: 'Peters', email: 'salPeters@mail.com', phoneNumber: '194-274-2847' },
+      { firstName: 'Alex', middleName: ' ', lastName: 'Bush', email: 'alexbush@mail.com', phoneNumber: '967-173-2833' },
+      { firstName: 'Judy', middleName: ' ', lastName: 'Evans', email: 'jevans@mail.com', phoneNumber: '893-290-3490' },
+      { firstName: 'Alan', middleName: ' ', lastName: 'Pong', email: 'alanpong@mail.com', phoneNumber: '984-271-1984' },
+      { firstName: 'Brian', middleName: 'A.', lastName: 'Gate', email: 'briangate@mail.com', phoneNumber: '094-280-9178' },
+      { firstName: 'Sally', middleName: ' ', lastName: 'Price', email: 'sprice@mail.com', phoneNumber: '932-139-2211' },
+      { firstName: 'Janet', middleName: 'I.', lastName: 'Davis', email: 'jDavis@mail.com', phoneNumber: '908-453-9780' },
+      { firstName: 'Mark', middleName: ' ', lastName: 'Miller', email: 'MarkMiller@mail.com', phoneNumber: '879-546-2390' },
+      { firstName: 'Sophie', middleName: ' ', lastName: 'Costanza', email: 'sophiecostanza@mail.com', phoneNumber: '548-348-4599' }
+    ];
+    
+    window.onload = () => {
+      loadTableData(teamDetailsData);
+    };
+    
+    function loadTableData(teamDetailsData) {
+      const tableBody = document.getElementById('teamDetailsBody');
+      let dataHtml = '';
+      
+      for(let teamDetail of teamDetailsData) {
+        dataHtml += `<tr><td>${teamDetail.firstName}</td><td>${teamDetail.middleName}</td><td>${teamDetail.lastName}</td><td>${teamDetail.email}</td><td>${teamDetail.phoneNumber}</td></tr>`;
+      }
+
+      tableBody.innerHTML = dataHtml;
+    }
+  </script>
+</head>
+
+<div class="wrapperProject"> <!-- WRAPPER FOR ENTIRE GRID, CAREFUL-->
+
+  <header class="header"> 
+        <a class="nav-image" href="selection_student.html"><img src="resources/project2collab2.png" width="200"
+          height="100" style="float:left"> </a> 
+          <div class="dropdownProject">
+              <button onclick="dropdownFuncProject()" class="dropbtnProject">Settings</button>
+              <div id="myDropdownProject" class="dropdownProject-content" >
+                <!--Users will only have access to the user settings based on which account type they are signed in to-->
+                <a href="studentusersettings.html">Edit Student Profile</a>
+                <a href="login_choice.html">Logout</a>
+              </div>
+            </div>      
+      <!--  
+        <a> Logo on the left with routing back to class selection. Dropdown on the right with User settings. </a>
+-->      
+  </header>
+
+  <!-- logo should return back to course selection-->
+  <!--<div class="box nav">Navigation</div> commented out for now
+   navigates across majority of course "main pages"-->
+  <div class="menu">
+    <!-- Menu -->
+    <nav class="gridmenu">
+      <ul class = "mainbar">
+        <li class = "mainpage"> <a href ="course_student.html">Course Page</a></li>
+          <ul>
+            <li class = "subpage"><a href = "submissions_student.html"> Submissions </a></li>
+            <li class = "subpage"><a href = "grades_student.html"> Grades </a></li>
+          </ul>
+        <li class = "mainpage"> <a href ="project_student.html">Project Page</a></li> 
+        <!-- will hold the progress bar and each box will link to that phase -->
+          <ul>
+            <li class = "subpage"><a href = "teamstorage_student.html"> Team Storage </a></li>
+            <li class = "subpage"><a href = "teamdetails_student.html"> Team Details </a></li>
+          </ul>
+      </ul>
+    </nav>
+  </div>  
+  <!-- holds link to project page, content, grades, assignments, etc..-->
+  
+  <script>
+    /*
+
+    Code to adjust progress bar % depending on how many checkmarks are checked (not done!)
+
+    $(document).ready(function(){
+
+    var $checkboxes = $('#devel-generate-content-form td input[type="checkbox"]');
+        
+    $checkboxes.change(function(){
+        var countCheckedCheckboxes = $checkboxes.filter(':checked').length;
+        $('#count-checked-checkboxes').text(countCheckedCheckboxes);
+        
+        $('#edit-count-checked-checkboxes').val(countCheckedCheckboxes);
+      });
+    });
+
+    var progressBar = $('.progress-bar');
+    var fillPercentage = (countCheckCheckboxes / totalCheckboxes) * 100;
+
+    progressBar.attr('aria-valuenow', progressNumber);
+    progressbar.css('width', progressnumber + '%');
+    */
+  </script>
+
+  <div class="progbar">
+      <div class="progress" style="height:150px; width: 1000px;">
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:25%; padding: 55px; font-size:medium;">
+        <b>Phase 1 <br>"Requirements"</b>
+      </div>
+      <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style=" width:25%; padding: 55px; font-size:medium;">
+        <b>Phase Two <br>"Design"</b>
+      </div>
+      <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:25%; padding: 55px; font-size:medium;">
+        <b>Phase 3 <br>"Implementation"</b>
+      </div>
+      <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width:25%; padding: 55px; font-size:medium;">
+        <b>Phase 4 <br>"Testing"</b>
+        </div>
+      </div> 
+    </div>
+  <!-- multi-colored progress bar-->
+  <div class="mainproject">
+    <!-- CheckList containing details for stage 1 of SD process goes here-->
+    <div class='detailswrapper' style="display:block;">
+      <table class ="teamtable" style=font-size:medium;>
+        <thead class ="teamtablehead">
+          <tr class="teamheaderrow">
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Student Email</th>
+            <th>Phone</th>
+          </tr>
+        </thead>
+        <tbody class = "teamtablebody">
+          <tr>
+            <td>Tom</td>
+            <td>Jan</td>
+            <td>Zdanowski</td>
+            <td>TomZ@depaul.edu</td>
+            <td>123-456-2385</td>
+          </tr>
+          <tr>
+            <td>John</td>
+            <td>B</td>
+            <td>Owski</td>
+            <td>johnc@depaul.edu</td>
+            <td>123-456-2645</td>
+          </tr>
+          <tr>
+            <td>Lili</td>
+            <td>Han</td>
+            <td>Yu</td>
+            <td>liliyu@depaul.edu</td>
+            <td>123-456-4585</td>
+          </tr>
+          <tr>
+            <td>Charles</td>
+            <td>Bak</td>
+            <td>John</td>
+            <td>charlesh@depaul.edu</td>
+            <td>123-556-4585</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- main course contents and list in project-->
+  <div class="box right">
+    <h4>News Feed:</h4>
+    <div class="newsfeed" id = "newsf1">
+      <h3> Homework 6 Upcoming Due Date </h3>
+      <p> Homework 6 [Team Homework Project Presentation] is due on March 15th. We will meet on zoom and have your demo ready to present. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf2">
+      <h3> Homework 7 Upcoming Due Date </h3>
+      <p> Homework 7 [Team Homework Project Documentation] is due on March 15th. We will meet on zoom and have your documentation ready to present. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf3">
+      <h3> Homework 8 Upcoming Due Date </h3>
+      <p> Homework 8 [Individual Assessment of your work] is due on March 15th. Submission will be reviewed and not discussed on zoom. <p>
+    </div>
+    <br>
+    <div class="newsfeed"id = "newsf4">
+      <h3> Homework 9 Upcoming Due Date </h3>
+      <p> Homework 9 [Individual Weekly Logs] is due on March 15th. All cumulative weekly logs throughout the quarter are expected to be completed and submitted by this date. <p>
+    </div>
+  </div>
+  <!-- future use case?-->
+  <!-- will hold communication aspect for project page, or news in content
+  <div class="right2">
+    <h2>Right 2</h2>
+    <a>
+      Communication method?
+    </a>
+  </div>-->
+
+  <!-- Above not implemented due to integration conflicts-->
+  <div class="footer">
+    <p> 
+      These are the Terms and Conditions governing the use of Project2Collaborate and the agreement that operates between you as a user and P2C. 
+      These Terms and Conditions set out the rights and obligations of all users regarding the use of the Service.
+      Your access to and use of the Service is conditioned on Your acceptance of and compliance with these Terms and Conditions. 
+      These Terms and Conditions apply to all visitors, users and others who access or use this service.
+      By accessing or using the Service You agree to be bound by these Terms and Conditions. If You disagree with any part of these Terms and Conditions then You may not access the Service.
+      You represent that you are enrolled at the select university. The Company does not permit those under 18 to use the Service or alternate permissions.
+      Your access to and use of the Service is also conditioned on Your acceptance of and compliance with the Privacy Policy of the Company. 
+      Our Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your personal information when 
+      You use the application and tells you about your privacy rights and how the law protects You. 
+      Please read Our Privacy Policy carefully before using Our Service.
+      <h6>Copyright &copy; 2021 All Rights Reserved by Project2Collaborate (P2C)</h6>
+      <br><br>
+    </p>
+  </div>
+
+  <body>
+      <script src="javascript/scripts.js"></script>
+  </body>
+</html>
